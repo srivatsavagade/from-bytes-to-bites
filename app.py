@@ -56,7 +56,7 @@ heading_styles = '''
 '''
 
 # Set page config
-st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_icon='🤖', page_title='Inclusive Technology')
+st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_icon='🤖', page_title='From Bytes to Bites')
 
 # Display the custom heading styles
 st.markdown(heading_styles, unsafe_allow_html=True)
