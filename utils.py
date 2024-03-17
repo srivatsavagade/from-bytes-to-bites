@@ -140,7 +140,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
   
     model=genai.GenerativeModel('gemini-pro')
     res = model.generate_content(prompt)
-    gt = res.result.replace('*', '')  # Remove asterisk marks
+    gt = res.text.replace('*', '')  # Remove asterisk marks
 
     # Translate the generated text to the target language
     translator = Translator()
