@@ -6,23 +6,10 @@ import cv2
 import time
 import numpy as np
 import shutil
-import google.generativeai as palm
+#import google.generativeai as palm
+import google.generativeai as genai
 from googletrans import Translator
-'''
-image_directory = "val"  # Assuming "val" is the directory name
 
-# Get a list of image filenames in the directory
-image_filenames = [filename for filename in os.listdir(image_directory) if filename.endswith(".jpg")]
-
-# Function to generate a random image from the list of filenames
-def get_random_image():
-    if not image_filenames:
-        return None
-    random_image_filename = random.choice(image_filenames)
-    random_image_filename1=random_image_filename.split('.')[0]
-    random_image_path = os.path.join(image_directory, random_image_filename)
-    return random_image_path,random_image_filename1 
-'''
 
 @st.cache_resource()    
 def main_model():
@@ -53,12 +40,7 @@ def upload():
         image_filename = f"{int(time.time())}.jpg"
         bytes_data = initial_image.getvalue()
         image = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
-        #hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-        #value = 42 #whatever value you want to add
-        #cv2.add(hsv[:,:,2], value, hsv[:,:,2])
-        #image = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
-
-        #image=cv2.multiply(image,0.00005)
+        
     return image, original_image,image_filename
  
 def process_image_with_yolo(pic0):
@@ -147,7 +129,7 @@ def process_image_with_yolo(pic0):
                 
                 
 def generate_recipe(vegetable_dict, target_lang,recipe):
-    palm.configure(api_key=st.secrets['key'])
+    genai.configure(api_key=st.secrets['key'])
     #palm.set_random_seed()
     prompt = f"Create {recipe} delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, and cooking instructions. Numbered each recipe\n\nIngredients:\n"
 
@@ -156,8 +138,8 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
 
     prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes."
   
-
-    res = palm.generate_text(prompt=prompt)
+    model=genai.GenerativeModel('gemini-pro')
+    res = model.generate_content(prompt)
     gt = res.result.replace('*', '')  # Remove asterisk marks
 
     # Translate the generated text to the target language
