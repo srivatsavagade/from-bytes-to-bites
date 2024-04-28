@@ -115,6 +115,15 @@ def main():
                     
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
                     #recipe_paragraphs=final_result.split('\n\n')
+                    if isinstance(final_result,dict):
+                        vegetables=final_result.keys()
+                        counts=final_result.values()
+                        data={
+                            'Vegetable':vegetables,
+                            'Count':counts
+                        }
+                        df=pd.DataFrame(data)
+                        st.write(df)
                     st.write(final_result)
                     #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
                         #for i in recipe_paragraphs:
