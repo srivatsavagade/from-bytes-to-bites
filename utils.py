@@ -118,7 +118,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     genai.configure(api_key=st.secrets['key'])
     #palm.set_random_seed()
 
-    prompt = f"Create nutritional {recipe} delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, detailed cooking instructions along with the nuritritional values serving per (cup). Numbered each recipe\n\nIngredients:\n"
+    prompt = f"Create {recipe} nutritional, delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, detailed cooking instructions along with the nuritritional values serving per (cup). Numbered each recipe\n\nIngredients:\n"
 
     for vegetable, count in vegetable_dict.items():
         prompt += f"- {vegetable} ({count} {'piece' if count == 1 else 'pieces'})\n"
