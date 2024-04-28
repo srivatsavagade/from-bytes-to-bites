@@ -92,10 +92,14 @@ def main():
             pic0=image
             uniquelist=process_image_with_yolo(pic0)
             if uniquelist:
-                    
-                for i,j in uniquelist.items():
-                    
-                    st.write(uniquelist)
+                vegetables=uniquelist.keys()
+                counts=uniquelist.values()
+                data={
+                    'Veggie':vegetables,
+                    'Counts':counts
+                }   
+                df=pd.DataFrame(data)
+                st.write(df)
                 lan_dcit={
                         'Telugu':'te',
                         'Malayalam':'ml',
@@ -115,16 +119,7 @@ def main():
                     
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
                     #recipe_paragraphs=final_result.split('\n\n')
-                    if isinstance(final_result,dict):
-                        vegetables=final_result.keys()
-                        counts=final_result.values()
-                        data={
-                            'Vegetable':vegetables,
-                            'Count':counts
-                        }
-                        df=pd.DataFrame(data)
-                        st.write(df)
-                    #st.write(final_result)
+                    st.write(final_result)
                     #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
                         #for i in recipe_paragraphs:
                             #st.write(i)
