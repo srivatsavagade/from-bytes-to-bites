@@ -105,7 +105,10 @@ def main():
                         'Malayalam':'ml',
                         'Hindi':'hi',
                         'Kannada':'kn',
-                        'Tamil':'ta'
+                        'Tamil':'ta',
+                        'English':'en',
+                        'Gujarati':'gu',
+                        'Punjabi':'pa'
                     }
                 recip_dict={
                     'one':1,
