@@ -108,14 +108,15 @@ def main():
                         'Tamil':'ta',
                         'English':'en',
                         'Gujarati':'gu',
-                        'Punjabi':'pa'
+                        'Punjabi':'pa',
+                        'Bengali':'bn'
                     }
                 recip_dict={
                     'one':1,
                     'two':2,
                     'three':3
                 }
-                choices=['Telugu','Malayalam','Hindi','Kannada','Tamil']
+                choices=['Telugu','Malayalam','Hindi','Kannada','Tamil','English','Gujarati','Punjabi','Bengali']
                 language=st.selectbox('Choose the language in which you want the recipe?',choices)
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 if st.button('Generate Recipe'):
