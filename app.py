@@ -124,7 +124,7 @@ def main():
                         }
                         df=pd.DataFrame(data)
                         st.write(df)
-                    st.write(final_result)
+                    #st.write(final_result)
                     #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
                         #for i in recipe_paragraphs:
                             #st.write(i)
