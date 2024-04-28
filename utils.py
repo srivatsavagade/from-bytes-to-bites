@@ -118,21 +118,13 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     genai.configure(api_key=st.secrets['key'])
     #palm.set_random_seed()
 
-    prompt = f"Generate a delightful recipes using the following vegetables, including a dish name, ingredients list, cooking instructions, and nutritional values per serving (cup). Number each recipe (e.g., '1. Dish Name', '2. Dish Name', etc.) and discuss the gut health benefits of these dishes.\n\nIngredients:\n"
+    prompt = f"Create nutritional {recipe} delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, detailed cooking instructions along with the nuritritional values serving per (cup). Numbered each recipe\n\nIngredients:\n"
 
     for vegetable, count in vegetable_dict.items():
         prompt += f"- {vegetable} ({count} {'piece' if count == 1 else 'pieces'})\n"
 
     prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes."
-    """
-    prompt=f'Generate recipes using 2 potatoes and 1 tomato, including a dish name, ingredients list, cooking instructions, and nutritional values per serving (cup). Number each recipe (e.g., '1. Dish Name', '2. Dish Name', etc.) and discuss the gut health benefits of these dishes.'
-        prompt = f"Create {recipe} delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, and cooking instructions. Numbered each recipe\n\nIngredients:\n"
-
-        for vegetable, count in vegetable_dict.items():
-            prompt += f"- {vegetable} ({count} {'piece' if count == 1 else 'pieces'})\n"
-
-        prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes."
-    """
+    
     model=genai.GenerativeModel('gemini-pro')
     res = model.generate_content(prompt)
     gt = res.text.replace('*', '')  # Remove asterisk marks
