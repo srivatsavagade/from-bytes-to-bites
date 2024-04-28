@@ -1,4 +1,4 @@
-opencv-python-headless
+opencv-python
 ultralytics
 streamlit
 googletrans==4.0.0.rc1
