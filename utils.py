@@ -45,32 +45,18 @@ def upload():
  
 def process_image_with_yolo(pic0):
     names={
-            0: 'avocado',
-            1: 'beans',
-            2: 'beet',
-            3: 'bell pepper',
-            4: 'broccoli',
-            5: 'brus capusta',
-            6: 'cabbage',
-            7: 'carrot',
-            8: 'cayliflower',
-            9: 'celery',
-            10: 'corn',
-            11: 'cucumber',
-            12: 'eggplant',
-            13: 'fasol',
-            14: 'garlic',
-            15: 'hot pepper',
-            16: 'onion',
-            17: 'peas',
-            18: 'potato',
-            19: 'pumpkin',
-            20: 'rediska',
-            21: 'redka',
-            22: 'salad',
-            23: 'squash-patisson',
-            24: 'tomato',
-            25: 'vegetable marrow'
+                0: 'beet',
+                1: 'bell_pepper',
+                2: 'cabbage',
+                3: 'carrot',
+                4: 'cucumber',
+                5: 'egg',
+                6: 'eggplant',
+                7: 'garlic',
+                8: 'onion',
+                9: 'potato',
+                10: 'tomato',
+                11: 'zucchini'
             
             }
         
