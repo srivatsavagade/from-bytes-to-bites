@@ -63,7 +63,7 @@ st.markdown(heading_styles, unsafe_allow_html=True)
 
 # Create the headings
 st.markdown(f'<p class="glowing-heading">🤖 From Bytes To Bites 🤖</p>', unsafe_allow_html=True)
-st.markdown(f'<p class="sub-heading">Deep Learning and AI-Generated Recipes</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="sub-heading">Deep Learning and AI-Generated Nutritional Recipes for Superhero Moms (Multilingual Support)</p>', unsafe_allow_html=True)
 
 # Image
 st.image('working.jpg',use_column_width=True)
