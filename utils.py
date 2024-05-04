@@ -22,12 +22,8 @@ def message():
     st.warning('⚠️Please check your image')
     st.info("📷✨ **Encountering the 'Please check your image' error?**")
     st.write("""
-            Our algorithm may not have been able to predict the content of your image. To improve results, consider the following:
-            👉 **Verify image quality and resolution.**
-            👉 **Ensure the image is clear and well-lit.**
-            👉 **Check if the image meets our specified format requirements.**
-            👉 **Consider alternative images for better results.**
-            Our aim is to provide accurate predictions, and addressing these aspects can make a significant difference. If the issue persists, please reach out to our support team. We're here to help! 🤝🔧
+            📷✨ Please check your image to ensure accuracy. If your vegetable isn't recognized, we're sorry! 🥕🍅 We're working on updates to include more varieties. 
+            Thanks for your patience! 🤗"
             """)
 
 def upload():
