@@ -19,11 +19,10 @@ def main_model():
 
         
 def message():
-    st.warning('⚠️Please check your image')
-    st.info("📷✨ **Encountering the 'Please check your image' error?**")
+    
     st.write("""
             📷✨ Please check your image to ensure accuracy. If your vegetable isn't recognized, we're sorry! 🥕🍅 We're working on updates to include more varieties. 
-            Thanks for your patience! 🤗"
+            Thanks for your patience! 🤗
             """)
 
 def upload():
