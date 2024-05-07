@@ -123,6 +123,7 @@ def main():
                 if st.button('Generate Recipe'):
                     st.write(frecipe)
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
+                    st.write(final_result[0])
                     if frecipe=='one':
                       col1=st.columns(1)
                       with col1:
