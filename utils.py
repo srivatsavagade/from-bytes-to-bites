@@ -6,7 +6,7 @@ import cv2
 import time
 import numpy as np
 import shutil
-#import google.generativeai as palm
+from gtts import gTTS
 import google.generativeai as genai
 from googletrans import Translator
 
@@ -143,4 +143,11 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     
     return translated_text.text
     '''
+
+
+def audio_versions(text,lan,iter):
+    tts = gTTS(text=text, lang=lan)
+    audio_path='recipe '+str(iter)+'.wav.'
+    tts.save(audio_path)
+    return audio_path
     
