@@ -123,6 +123,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     model=genai.GenerativeModel('gemini-pro')
     res = model.generate_content(prompt)
     gt = res.text.replace('*', '')  # Remove asterisk marks
+    '''
     gt = gt.split('---')
     gt = gt[1:]
   
@@ -135,14 +136,14 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
       translated_text = translator.translate(gt[i], src='en', dest=target_lang)
       trs.append(translated_text.text)    
     return trs
-    
     '''
+    
     # Translate the generated text to the target language
     translator = Translator()
     translated_text = translator.translate(gt, src='en', dest=target_lang)
     
     return translated_text.text
-    '''
+    
 
 
 def audio_versions(text,lan,iter):
