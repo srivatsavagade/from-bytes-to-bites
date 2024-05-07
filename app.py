@@ -82,11 +82,11 @@ def main():
     
    
     
-    if st.checkbox('Take a picture for recipe generation'):
+    if st.checkbox('Take a picture for Recipe & Audio Generation'):
     
         
         image, original_image,image_filename= upload()
-        if original_image is not None and image_filename is not None and len(image_filename)!=0 and st.checkbox('Prediction'):  # Check if original_image is not None
+        if original_image is not None and image_filename is not None and len(image_filename)!=0 and st.checkbox('Start Identifying Veggies!!'):  # Check if original_image is not None
             st.info('Wait for the results...!')
                 #image1=cv2.imread(image)
             pic0=image
@@ -123,7 +123,7 @@ def main():
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 
                 frecipe=recip_dict[recipe]
-                if st.button('Generate Recipe'):
+                if st.button('Generate Recipes & Audio'):
                     
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe),cuisine,dietary_type)
                     #recipe_paragraphs=final_result.split('\n\n')
