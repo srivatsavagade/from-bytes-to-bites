@@ -125,7 +125,7 @@ def main():
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
                     for i in range(len(final_result)):
                         st.code(final_result[i])
-                        recipe_audio=audio_versions(final_result[i],lan_dict[language],i)
+                        recipe_audio=audio_versions(final_result[i],lan_dcit[language],i)
                         st.audio(recipe_audio,format='audio/wav')
                         st.write('---'*6)
                       
