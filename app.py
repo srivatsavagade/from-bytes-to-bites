@@ -124,7 +124,7 @@ def main():
                 
                 frecipe=recip_dict[recipe]
                 if st.button('Generate Recipe'):
-                    '''
+                    
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe),cuisine,dietary_type)
                     #recipe_paragraphs=final_result.split('\n\n')
                     st.write(final_result)
@@ -152,7 +152,7 @@ def main():
                         recipe_audio=audio_versions(final_result[i],lan_dcit[language],i)
                         st.audio(recipe_audio,format='audio/wav')
                         st.write('---'*6)
-
+                    '''
                     
                       
 
