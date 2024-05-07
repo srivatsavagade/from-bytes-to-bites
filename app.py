@@ -144,6 +144,7 @@ def main():
                     st.balloons()
                     with st.spinner('Wait for the audio version................'):
                         time.sleep(3)
+                    st.info('Aduio Version of the Recipes')
                     st.audio(audio_path, format='audio/wav')
                    
                       
