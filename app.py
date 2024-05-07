@@ -112,22 +112,23 @@ def main():
                         'Bengali':'bn'
                     }
                 recip_dict={
-                    'one':1,
-                    'two':2,
-                    'three':3
+                    '1':'one',
+                    '2':'two',
+                    '3':'three'
                 }
                 choices=['Telugu','Malayalam','Hindi','Kannada','Tamil','English','Gujarati','Punjabi','Bengali']
                 language=st.selectbox('Choose the language in which you want the recipe?',choices)
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
+                frecipe=recip_dict[recipe]
                 if st.button('Generate Recipe'):
-                    final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
-                    if int(recipe)==1:
+                    final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
+                    if frecipe=='one':
                       col1=st.columns(1)
                       with col1:
                         st.info('Recipe -1')
                         st.write(final_result[0])
                       
-                    elif int(recipe)==2:
+                    elif frecipe=='two':
                       col1,col2=st.columns(2)
                       with col1:
                         st.info('Recipe - 1')
@@ -136,7 +137,7 @@ def main():
                         st.info('Recipe - 2')
                         st.write(final_result[1])
                       
-                    elif int(recipe)==3:
+                    elif frecipe=='three':
                       col1,col2,col3=st.columns(2)
                       with col1:
                         st.info('Recipe - 1')
