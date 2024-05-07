@@ -12,7 +12,7 @@ import os
 from PIL import Image
 import base64
 import random
-from utils import main_model,message,upload,process_image_with_yolo,generate_recipe
+from utils import main_model,message,upload,process_image_with_yolo,generate_recipe,audio_versions
 
 heading_styles = '''
     <style>
@@ -125,6 +125,8 @@ def main():
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
                     for i in range(len(final_result)):
                         st.code(final_result[i])
+                        recipe_audio=audio_versions(final_result[i],lan_dict[language],i)
+                        st.audio(recipe_audio,format='audio/wav')
                         st.write('---'*6)
                       
 
