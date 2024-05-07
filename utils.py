@@ -118,7 +118,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     for vegetable, count in vegetable_dict.items():
         prompt += f"- {vegetable} ({count} {'piece' if count == 1 else 'pieces'})\n"
 
-    prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes."
+    prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes. Make sure to seperate each recipe with dashed line for better looking!"
     
     model=genai.GenerativeModel('gemini-pro')
     res = model.generate_content(prompt)
