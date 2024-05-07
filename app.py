@@ -124,7 +124,7 @@ def main():
                     
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
                     for i in range(len(final_result)):
-                        st.write(final_result[i])
+                        st.code(final_result[i])
                         st.write('---'*6)
                       
 
