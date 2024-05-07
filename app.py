@@ -123,7 +123,7 @@ def main():
                 if st.button('Generate Recipe'):
                     
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
-                    for i in range(len(final_result):
+                    for i in range(len(final_result)):
                         st.write(final_result[i])
                       
 
