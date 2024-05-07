@@ -117,15 +117,15 @@ def main():
                     '3':'three'
                 }
                 choices=['Telugu','Malayalam','Hindi','Kannada','Tamil','English','Gujarati','Punjabi','Bengali']
-                cuisine=st.selectbox('Choose the preferred cuisine?',['north-indian','south-indian','italian','mexican','chinese'])
-                dietary_type=st.selectbox('Choose the dieatry type?',['vegetarian','non vegetarian','vegan','eggetarian'])
+                cuisine=st.selectbox('Choose the preferred cuisine?',['Indian','Italian','Mexican','Chinese'])
+                #dietary_type=st.selectbox('Choose the dieatry type?',['vegetarian','non vegetarian','vegan','eggetarian'])
                 language=st.selectbox('Choose the language in which you want the recipe?',choices)
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 
                 frecipe=recip_dict[recipe]
                 if st.button('Generate Recipes & Audio'):
                     
-                    final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe),cuisine,dietary_type)
+                    final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe),cuisine)
                     #recipe_paragraphs=final_result.split('\n\n')
                     st.write(final_result)
                     
@@ -145,15 +145,7 @@ def main():
                     with st.spinner('Wait for the audio version................'):
                         time.sleep(3)
                     st.audio(audio_path, format='audio/wav')
-                    '''
-                    final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
-                    for i in range(len(final_result)):
-                        st.code(final_result[i])
-                        recipe_audio=audio_versions(final_result[i],lan_dcit[language],i)
-                        st.audio(recipe_audio,format='audio/wav')
-                        st.write('---'*6)
-                    '''
-                    
+                   
                       
 
                     
