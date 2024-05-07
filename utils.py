@@ -123,7 +123,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe,cuisine,dietary_type):
     model=genai.GenerativeModel('gemini-pro')
     res = model.generate_content(prompt)
     gt = res.text.replace('*', '')  # Remove asterisk marks
-    
+    '''
     gt = gt.split('---')
     gt = gt[1:]
   
@@ -143,7 +143,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe,cuisine,dietary_type):
     translated_text = translator.translate(gt, src='en', dest=target_lang)
     
     return translated_text.text
-    '''
+    
 
 
 def audio_versions(text,lan,iter):
