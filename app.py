@@ -121,35 +121,10 @@ def main():
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 frecipe=recip_dict[recipe]
                 if st.button('Generate Recipe'):
-                    st.write(frecipe)
+                    
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
-                    st.write(final_result[0])
-                    if frecipe=='one':
-                      col1=st.columns(1)
-                      with col1:
-                        st.info('Recipe -1')
+                    for i in range(len(final_result):
                         st.write(final_result[0])
-                      
-                    elif frecipe=='two':
-                      col1,col2=st.columns(2)
-                      with col1:
-                        st.info('Recipe - 1')
-                        st.write(final_result[0])
-                      with col2:
-                        st.info('Recipe - 2')
-                        st.write(final_result[1])
-                      
-                    elif frecipe=='three':
-                      col1,col2,col3=st.columns(2)
-                      with col1:
-                        st.info('Recipe - 1')
-                        st.write(final_result[0])
-                      with col2:
-                        st.info('Recipe - 2')
-                        st.write(final_result[1])
-                      with col3:
-                        st.info('Recipe - 3')
-                        st.write(final_result[2])
                       
 
                     '''
