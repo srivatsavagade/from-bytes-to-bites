@@ -121,13 +121,35 @@ def main():
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 frecipe=recip_dict[recipe]
                 if st.button('Generate Recipe'):
+                    final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
+                    #recipe_paragraphs=final_result.split('\n\n')
+                    st.write(final_result)
                     
+                    #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
+                        #for i in recipe_paragraphs:
+                            #st.write(i)
+                        #st.write('-'*100)
+                    text_to_speech = final_result
+                    tts = gTTS(text=text_to_speech, lang=lan_dcit[language])
+                    
+                        # Save the audio file
+                    audio_path = 'saved_audio.wav'
+                    tts.save(audio_path)
+                    
+                        # Play the audio
+                    st.balloons()
+                    with st.spinner('Wait for the audio version................'):
+                        time.sleep(3)
+                    st.audio(audio_path, format='audio/wav')
+                    '''
                     final_result=generate_recipe(uniquelist,lan_dcit[language],frecipe)
                     for i in range(len(final_result)):
                         st.code(final_result[i])
                         recipe_audio=audio_versions(final_result[i],lan_dcit[language],i)
                         st.audio(recipe_audio,format='audio/wav')
                         st.write('---'*6)
+
+                    '''
                       
 
                     
