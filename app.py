@@ -120,10 +120,40 @@ def main():
                 language=st.selectbox('Choose the language in which you want the recipe?',choices)
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 if st.button('Generate Recipe'):
-                    
+                    final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
+                    if int(recipe)==1:
+                      col1=st.columns(1)
+                      with col1:
+                        st.info('Recipe -1')
+                        st.write(final_result[0])
+                      
+                    elif int(recipe)==2:
+                      col1,col2=st.columns(2)
+                      with col1:
+                        st.info('Recipe - 1')
+                        st.write(final_result[0])
+                      with col2:
+                        st.info('Recipe - 2')
+                        st.write(final_result[1])
+                      
+                    elif int(recipe)==3:
+                      col1,col2,col3=st.columns(2)
+                      with col1:
+                        st.info('Recipe - 1')
+                        st.write(final_result[0])
+                      with col2:
+                        st.info('Recipe - 2')
+                        st.write(final_result[1])
+                      with col3:
+                        st.info('Recipe - 3')
+                        st.write(final_result[2])
+                      
+
+                    '''
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
                     #recipe_paragraphs=final_result.split('\n\n')
                     st.write(final_result)
+                    
                     #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
                         #for i in recipe_paragraphs:
                             #st.write(i)
@@ -140,6 +170,7 @@ def main():
                     with st.spinner('Wait for the audio version................'):
                         time.sleep(3)
                     st.audio(audio_path, format='audio/wav')
+                    '''
                     
                       
                                                 
