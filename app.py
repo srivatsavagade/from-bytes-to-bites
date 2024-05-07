@@ -82,11 +82,11 @@ def main():
     
    
     
-    if st.checkbox('Take a picture for prediction'):
+    if st.checkbox('Take a picture for recipe generation'):
     
         
         image, original_image,image_filename= upload()
-        if original_image is not None and image_filename is not None and len(image_filename)!=0 and st.checkbox('Prediction'):  # Check if original_image is not None
+        if original_image is not None and image_filename is not None and len(image_filename)!=0 and st.button('Prediction'):  # Check if original_image is not None
             st.info('Wait for the results...!')
                 #image1=cv2.imread(image)
             pic0=image
